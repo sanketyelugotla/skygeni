@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/db.js");
-const cors = require("cors"); // ✅ Make sure this line is present
+const cors = require("cors");
+const {data} = require("./routes/index.js")
 
 const app = express();
 
@@ -24,7 +25,7 @@ app.get("/", (req, res) => {
     res.send("Skygeni api running...");
 });
 
-
+app.use("/data", data);
 
 // Server
 const PORT = process.env.PORT || 5000;
