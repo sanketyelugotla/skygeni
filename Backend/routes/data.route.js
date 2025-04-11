@@ -3,6 +3,7 @@ const { dataService } = require("../services")
 
 const router = express.Router();
 
+// Route to get data by opportunityCount
 router.get("/getDataByOpportunityCount", async (req, res) => {
     try {
         const data = await dataService.getDataByOpportunityCount();
@@ -12,6 +13,7 @@ router.get("/getDataByOpportunityCount", async (req, res) => {
     }
 });
 
+// Route to get data by acv
 router.get("/getDataByACV", async (req, res) => {
     try {
         const data = await dataService.getDataByACV();

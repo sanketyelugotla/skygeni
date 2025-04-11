@@ -1,14 +1,15 @@
 const express = require("express");
 const connectDB = require("./config/db.js");
 const cors = require("cors");
-const {data} = require("./routes/index.js")
+const { data } = require("./routes/index.js")
 
 const app = express();
 
+// Cors to prevent access from other domains
 const corsOptions = {
     origin: ['https://digi-ballot.vercel.app', 'http://localhost:5173'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type'],
 };
 
 // Middleware
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
     res.send("Skygeni api running...");
 });
 
+//  Main data route
 app.use("/data", data);
 
 // Server
