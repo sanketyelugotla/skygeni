@@ -33,7 +33,7 @@ export default function AcvChart() {
 											className="progress-bar"
 											style={{ width: `${(item.acv / total * 100) || 0}%` }}
 										>
-											<span className="bar-label">${item.acv}</span>
+											<span className="bar-label">${item.acv.toLocaleString('en', { useGrouping: true })}</span>
 										</div>
 									</div>
 									<span className="won-percent">{item.wonPercent}%</span>
