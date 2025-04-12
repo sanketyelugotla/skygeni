@@ -15,7 +15,7 @@
 .summary-table-container td {
     border: 1px solid #ddd;
     text-align: left;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.4rem;
     text-align: right;
 }
 
@@ -40,6 +40,7 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #818080;
+    cursor: pointer;
 }
 
 .red {
@@ -55,6 +56,11 @@
 .green {
     color: white;
     background-color: #548236;
+}
+
+.total {
+    font-family: Roboto;
+    font-weight: 600;
 }
 
 @media (max-width: 600px) {

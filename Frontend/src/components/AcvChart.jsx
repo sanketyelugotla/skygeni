@@ -38,9 +38,12 @@ export default function AcvChart() {
 									</div>
 									<span className="won-percent">{item.wonPercent}%</span>
 								</div>
-								<div className="qualify-percent">
-									<span>{item.qualifyPercent}%</span>
-								</div>
+								{
+									item.label !== "Won" &&
+									<div className="qualify-percent">
+										{item.qualifyPercent}%
+									</div>
+								}
 							</div>
 						</li>
 					))}

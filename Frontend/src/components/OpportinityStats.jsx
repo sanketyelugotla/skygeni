@@ -34,7 +34,7 @@ export default function Opportunitystats() {
 							<td>{`${item.wonPercent}%` || '-'}</td>
 						</tr>
 					))}
-					<tr>
+					<tr className='total'>
 						<td id='left'>Total</td>
 						<td>-</td>
 						<td className='green'>{opportunityData[0].count - opportunityData[opportunityData.length - 1].count}</td>

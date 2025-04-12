@@ -30,11 +30,11 @@ export default function AcvStats() {
 							<td id='left'>{item.label}</td>
 							<td>{item.acv.toLocaleString('en', { useGrouping: true })}</td>
 							<td>{item.disqualified >= 0 ? item.disqualified.toLocaleString('en', { useGrouping: true }) : '-'}</td>
-							<td>{item.qualified.toLocaleString('en', { useGrouping: true }) || '-'}</td>
+							<td>{item?.qualified?.toLocaleString('en', { useGrouping: true }) || '-'}</td>
 							<td>{`${item.wonPercent}%` || '-'}</td>
 						</tr>
 					))}
-					<tr>
+					<tr className='total'>
 						<td id='left'>Total</td>
 						<td>-</td>
 						<td className='green'>{(acvData[0].acv - acvData[acvData.length - 1].acv).toLocaleString('en', { useGrouping: true })}</td>
