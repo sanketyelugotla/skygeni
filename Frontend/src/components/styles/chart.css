@@ -1,24 +1,37 @@
 .win-rate-by-count-chart {
     border: 1px solid #ccc;
-    padding: 15px;
-    border-radius: 8px;
+    /* padding: 10px 50px; */
+    border-radius: 5px;
+    box-shadow: 0 0 15px 2px #00000083;
+    padding-bottom: 2rem;
+}
+
+.title {
+    margin-left: 2rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+    line-height: 4rem;
+    border-bottom: 1px solid #00000034;
+    margin-bottom: 1rem;
+}
+
+.wholeChart {
+    padding: 0 5rem;
 }
 
 .chart-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .chart-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: .1rem;
 }
 
 .stage-label {
-    width: 80px;
-    margin-right: 10px;
+    width: 4rem;
+    margin-right: 0.5rem;
     font-size: 0.9em;
 }
 
@@ -33,29 +46,26 @@
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 10px;
-    /* Space between progress bar and won-percent */
 }
 
 .progress-bar-container {
     display: flex;
     justify-content: center;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    background-color: #bfbfbfbd;
+    border-radius: 3px;
     overflow: hidden;
     flex-grow: 1;
 }
 
 .progress-bar {
-    background-color: #4CAF50;
+    background-color: #70ad47;
     color: white;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 0.3rem;
+    border-radius: 3px;
     font-size: 0.8em;
     white-space: nowrap;
     text-align: center;
     min-width: fit-content;
-    /* Ensure the label fits */
 }
 
 .bar-label {
@@ -64,16 +74,15 @@
 
 .won-percent {
     font-size: 0.9em;
-    color: #333;
     min-width: 40px;
     /* Ensure consistent width for alignment */
     text-align: right;
 }
 
 .qualify-percent {
+    margin-left: -18px;
     font-size: 0.8em;
-    color: #777;
-    margin-top: 5px;
+    margin-top: 0.1rem;
     text-align: center;
     width: 100%;
 }

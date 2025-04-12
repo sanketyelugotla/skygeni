@@ -19,28 +19,30 @@ export default function OpportunityChart() {
 
 	return (
 		<div className="win-rate-by-count-chart">
-			<h3>Win Rate by Opportunity Count: {opportunityData[0]?.wonPercent || 0}%</h3>
-			<ul className="chart-list">
-				{opportunityData.map((item) => (
-					<li key={item.label} className="chart-item">
-						<span className="stage-label">{item.label}</span>
-						<div className='total-progress-bar'>
-							<div className="progress-bar-wrapper">
-								<div className="progress-bar-container">
-									<div
-										className="progress-bar"
-										style={{ width: `${(item.count / total * 100) || 0}%` }}
-									>
-										<span className="bar-label">{item.count}</span>
+			<h3 className='title'>Win Rate by Opportunity Count: {opportunityData[0]?.wonPercent || 0}%</h3>
+			<div className='wholeChart'>
+				<ul className="chart-list">
+					{opportunityData.map((item) => (
+						<li key={item.label} className="chart-item">
+							<span className="stage-label">{item.label}</span>
+							<div className='total-progress-bar'>
+								<div className="progress-bar-wrapper">
+									<div className="progress-bar-container">
+										<div
+											className="progress-bar"
+											style={{ width: `${(item.count / total * 100) || 0}%` }}
+										>
+											<span className="bar-label">{item.count}</span>
+										</div>
 									</div>
+									<span className="won-percent">{item.wonPercent}%</span>
 								</div>
-								<span className="won-percent">{item.wonPercent}%</span>
+								<span className="qualify-percent">{item.qualifyPercent}%</span>
 							</div>
-							<span className="qualify-percent">{item.qualifyPercent}%</span>
-						</div>
-					</li>
-				))}
-			</ul>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }
