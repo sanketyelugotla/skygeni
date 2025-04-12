@@ -1,6 +1,5 @@
 .win-rate-by-count-chart {
     border: 1px solid #ccc;
-    /* padding: 10px 50px; */
     border-radius: 5px;
     box-shadow: 0 0 15px 2px #00000083;
     padding-bottom: 2rem;
@@ -11,8 +10,14 @@
     font-weight: 500;
     letter-spacing: .5px;
     line-height: 4rem;
-    border-bottom: 1px solid #00000034;
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: #0000004f;
     margin-bottom: 1rem;
+
 }
 
 .wholeChart {
@@ -25,21 +30,21 @@
 
 .chart-item {
     display: flex;
-    align-items: center;
-    margin-bottom: .1rem;
+    margin-bottom: 0.5rem;
 }
 
 .stage-label {
+    text-align: end;
     width: 4rem;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     font-size: 0.9em;
+    padding-top: 0.3rem;
 }
 
-.total-progress-bar {
-    flex-grow: 1;
+.progress-wrapper {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 
 .progress-bar-wrapper {
@@ -51,38 +56,38 @@
 .progress-bar-container {
     display: flex;
     justify-content: center;
+    flex: 1;
     background-color: #bfbfbfbd;
     border-radius: 3px;
     overflow: hidden;
-    flex-grow: 1;
+    height: 1.6rem;
 }
 
 .progress-bar {
     background-color: #70ad47;
     color: white;
-    padding: 0.3rem;
-    border-radius: 3px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0.8em;
-    white-space: nowrap;
-    text-align: center;
-    min-width: fit-content;
+    padding: 0 0.3rem;
 }
 
 .bar-label {
-    /* Styles for the label inside the progress bar */
+    white-space: nowrap;
 }
 
 .won-percent {
+    min-width: 2rem;
     font-size: 0.9em;
-    min-width: 40px;
-    /* Ensure consistent width for alignment */
-    text-align: right;
+    text-align: left;
+    margin-left: 0.5rem;
 }
 
 .qualify-percent {
-    margin-left: -18px;
     font-size: 0.8em;
-    margin-top: 0.1rem;
     text-align: center;
-    width: 100%;
+    margin-top: 0.2rem;
+    width: calc(100% - 40px);
 }

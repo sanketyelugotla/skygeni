@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchOpportunityData } from '../redux/dataSlice';
-import './styles/chart.css'; // Import the CSS
+import './styles/chart.css';
 
 export default function OpportunityChart() {
 	const dispatch = useDispatch();
@@ -20,12 +20,13 @@ export default function OpportunityChart() {
 	return (
 		<div className="win-rate-by-count-chart">
 			<h3 className='title'>Win Rate by Opportunity Count: {opportunityData[0]?.wonPercent || 0}%</h3>
+			<div className='line' />
 			<div className='wholeChart'>
 				<ul className="chart-list">
 					{opportunityData.map((item) => (
 						<li key={item.label} className="chart-item">
 							<span className="stage-label">{item.label}</span>
-							<div className='total-progress-bar'>
+							<div className="progress-wrapper">
 								<div className="progress-bar-wrapper">
 									<div className="progress-bar-container">
 										<div
@@ -37,7 +38,9 @@ export default function OpportunityChart() {
 									</div>
 									<span className="won-percent">{item.wonPercent}%</span>
 								</div>
-								<span className="qualify-percent">{item.qualifyPercent}%</span>
+								<div className="qualify-percent">
+									{item.qualifyPercent}%
+								</div>
 							</div>
 						</li>
 					))}

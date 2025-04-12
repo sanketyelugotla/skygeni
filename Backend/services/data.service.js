@@ -67,6 +67,7 @@ const getDataByACV = async () => {
             result.push({
                 label: current.label,
                 acv: Math.round(currentACV),
+                wonPercent: 100,
                 qualifyPercent: 100,
                 qualified: Math.round(currentACV)
             });
