@@ -20,6 +20,7 @@
 }
 
 .wholeChart {
+    min-width: 400px;
     padding: 0 4rem;
 }
 
@@ -89,4 +90,14 @@
     text-align: center;
     margin-top: 0.2rem;
     width: calc(100% - 40px);
+}
+
+@media (max-width: 700px) {
+    .wholeChart {
+        padding: 0 1rem;
+    }
+
+    .stage-label {
+        width: 3.1rem;
+    }
 }

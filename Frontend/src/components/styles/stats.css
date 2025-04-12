@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 0.8rem;
     border-radius: 8px;
-    margin-top: 20px;
+    margin-top: 1rem;
 }
 
 .summary-table-container table {
@@ -55,4 +55,20 @@
 .green {
     color: white;
     background-color: #548236;
+}
+
+@media (max-width: 600px) {
+    .summary-table-container {
+        padding: 0;
+        margin: 1rem 0;
+    }
+
+    .summary-table-container th,
+    .summary-table-container td {
+        padding: 0.2rem 0.5rem;
+    }
+
+    #left {
+        width: auto;
+    }
 }
