@@ -1,0 +1,33 @@
+.summary-table-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    /* Add some spacing between charts/tables */
+}
+
+.summary-table-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.summary-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.summary-table-container th,
+.summary-table-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.summary-table-container th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.summary-table-container tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

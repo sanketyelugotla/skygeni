@@ -1,33 +1,46 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchACVData, fetchOpportunityData } from '../redux/dataSlice';
+import { fetchOpportunityData } from '../redux/dataSlice';
+import './styles/chart.css'; // Import the CSS
 
 export default function OpportunityChart() {
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
+	const { opportunityData, loading, error } = useSelector((state) => state.data);
 
-  // Fetch data from Redux state
-  const { acvData, opportunityData, loading, error } = useSelector((state) => state.data);
+	useEffect(() => {
+		dispatch(fetchOpportunityData());
+	}, [dispatch]);
 
-  // Fetch the data when component mounts
-  useEffect(() => {
-    dispatch(fetchACVData());
-    dispatch(fetchOpportunityData());
-  }, [dispatch]);
+	if (loading) return <p>Loading opportunity data...</p>;
+	if (error) return <p>Error loading opportunity data: {error}</p>;
+	if (!opportunityData || opportunityData.length === 0) return <p>No opportunity data available.</p>;
 
-  // Loading/Error UI
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+	const total = opportunityData[0]?.count || 0;
 
-  // Render the data
-  return (
-    <div>
-      <h2>Opportunity Chart</h2>
-
-      <h3>ACV Data:</h3>
-      <pre>{JSON.stringify(acvData, null, 2)}</pre>
-
-      <h3>Opportunity Count Data:</h3>
-      <pre>{JSON.stringify(opportunityData, null, 2)}</pre>
-    </div>
-  );
+	return (
+		<div className="win-rate-by-count-chart">
+			<h3>Win Rate by Opportunity Count: {opportunityData[0]?.wonPercent || 0}%</h3>
+			<ul className="chart-list">
+				{opportunityData.map((item) => (
+					<li key={item.label} className="chart-item">
+						<span className="stage-label">{item.label}</span>
+						<div className='total-progress-bar'>
+							<div className="progress-bar-wrapper">
+								<div className="progress-bar-container">
+									<div
+										className="progress-bar"
+										style={{ width: `${(item.count / total * 100) || 0}%` }}
+									>
+										<span className="bar-label">{item.count}</span>
+									</div>
+								</div>
+								<span className="won-percent">{item.wonPercent}%</span>
+							</div>
+							<span className="qualify-percent">{item.qualifyPercent}%</span>
+						</div>
+					</li>
+				))}
+			</ul>
+		</div>
+	);
 }
