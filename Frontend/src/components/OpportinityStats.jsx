@@ -1,48 +1,116 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchOpportunityData } from '../redux/dataSlice';
-import { TbCopy } from "react-icons/tb";
-import './styles/stats.css';
+import { ContentCopy as CopyIcon } from '@mui/icons-material';
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableContainer,
+	TableHead,
+	TableRow,
+	Paper,
+	Typography,
+	CircularProgress,
+	Box,
+	IconButton,
+	styled
+} from '@mui/material';
 
-export default function Opportunitystats() {
+const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
+	position: 'relative',
+	padding: theme.spacing(4),
+	boxShadow: theme.shadows[3],
+	borderRadius: theme.shape.borderRadius,
+}));
+
+const StyledIconButton = styled(IconButton)(({ theme }) => ({
+	position: 'absolute',
+	top: theme.spacing(1),
+	right: theme.spacing(1),
+}));
+
+const CenterCell = styled(TableCell)({
+	textAlign: 'center',
+});
+
+const LeftCell = styled(TableCell)({
+	textAlign: 'left',
+});
+
+const RedCell = styled(CenterCell)(({ theme }) => ({
+	color: theme.palette.error.main,
+}));
+
+const CreamCell = styled(CenterCell)(({ theme }) => ({
+	backgroundColor: theme.palette.background.default,
+}));
+
+const GreenCell = styled(TableCell)(({ theme }) => ({
+	color: theme.palette.success.main,
+	fontWeight: 'bold',
+}));
+
+const TotalRow = styled(TableRow)(({ theme }) => ({
+	backgroundColor: theme.palette.grey[100],
+	'& td': {
+		fontWeight: 'bold',
+	},
+}));
+
+export default function OpportunityStats() {
 	const dispatch = useDispatch();
 	const { opportunityData, loading, error } = useSelector((state) => state.data);
 
-	if (loading) return <p>Loading data...</p>;
-	if (error) return <p>Error loading data: {error}</p>;
+	if (loading) return (
+		<Box display="flex" justifyContent="center" p={4}>
+			<CircularProgress />
+		</Box>
+	);
+
+	if (error) return (
+		<Typography color="error" align="center" p={4}>
+			Error loading data: {error}
+		</Typography>
+	);
 
 	return opportunityData.length > 0 && (
-		<div className="summary-table-container">
-			<TbCopy className='icon' />
-			<table>
-				<thead>
-					<tr>
-						<th id="left">Stage</th>
-						<th className='center'>Came to Stage</th>
-						<th className='red center'>Lost / Disqualified <br /> from stage</th>
-						<th className='cream center'>Moved to next <br /> stage</th>
-						<th className='center'>Win Rate %</th>
-					</tr>
-				</thead>
-				<tbody>
+		<StyledTableContainer component={Paper}>
+			<StyledIconButton aria-label="copy">
+				<CopyIcon />
+			</StyledIconButton>
+
+			<Table>
+				<TableHead>
+					<TableRow>
+						<LeftCell>Stage</LeftCell>
+						<CenterCell>Came to Stage</CenterCell>
+						<RedCell>Lost / Disqualified<br />from stage</RedCell>
+						<CreamCell>Moved to next<br />stage</CreamCell>
+						<CenterCell>Win Rate %</CenterCell>
+					</TableRow>
+				</TableHead>
+				<TableBody>
 					{opportunityData.map((item) => (
-						<tr key={item.label}>
-							<td id='left'>{item.label}</td>
-							<td>{item.count}</td>
-							<td>{item.disqualified >= 0 ? item.disqualified : '-'}</td>
-							<td>{item.qualified || '-'}</td>
-							<td>{`${item.wonPercent}%` || '-'}</td>
-						</tr>
+						<TableRow key={item.label}>
+							<LeftCell>{item.label}</LeftCell>
+							<CenterCell>{item.count}</CenterCell>
+							<CenterCell>{item.disqualified >= 0 ? item.disqualified : '-'}</CenterCell>
+							<CenterCell>{item.qualified || '-'}</CenterCell>
+							<CenterCell>{`${item.wonPercent}%` || '-'}</CenterCell>
+						</TableRow>
 					))}
-					<tr className='total'>
-						<td id='left'>Total</td>
-						<td>-</td>
-						<td className='green'>{opportunityData[0].count - opportunityData[opportunityData.length - 1].count}</td>
-						<td>-</td>
-						<td>-</td>
-					</tr>
-				</tbody>
-			</table>
-		</div >
+					<TotalRow>
+						<LeftCell>Total</LeftCell>
+						<CenterCell>-</CenterCell>
+						<GreenCell align="center">
+							{opportunityData[0].count - opportunityData[opportunityData.length - 1].count}
+						</GreenCell>
+						<CenterCell>-</CenterCell>
+						<CenterCell>-</CenterCell>
+					</TotalRow>
+				</TableBody>
+			</Table>
+		</StyledTableContainer>
 	);
 }
