@@ -5,7 +5,8 @@ import {
     Typography,
     List,
     ListItem,
-    LinearProgress
+    LinearProgress,
+    colors
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -41,6 +42,7 @@ const ChartContent = styled(Box)(({ theme }) => ({
 }));
 
 const StageLabel = styled(Typography)(({ theme }) => ({
+    zIndex: "10",
     textAlign: 'end',
     width: '4rem',
     alignSelf: "flex-start",
@@ -49,6 +51,9 @@ const StageLabel = styled(Typography)(({ theme }) => ({
     paddingTop: '0.3rem',
     [theme.breakpoints.down('sm')]: {
         width: '3.1rem',
+        position: "absolute",
+        color: "white",
+        left: "0.5rem"
     },
 }));
 
@@ -107,9 +112,6 @@ const PercentText = styled(Typography)(({ theme }) => ({
     fontSize: '0.9em',
     textAlign: 'left',
     marginLeft: '0.5rem',
-    [theme.breakpoints.down('sm')]: {
-        minWidth: "1rem"
-    },
 }));
 
 const QualifyPercent = styled(Typography)(({ theme }) => ({
