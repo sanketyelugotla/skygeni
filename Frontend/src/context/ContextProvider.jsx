@@ -6,8 +6,6 @@ const databaseContext = createContext();
 const database_url = "https://skygeni-seven.vercel.app"
 
 export default function ContextProvider({ children }) {
-
-
     return (
         <databaseContext.Provider value={database_url}>
             {children}

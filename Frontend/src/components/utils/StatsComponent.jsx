@@ -1,5 +1,9 @@
 import React from 'react';
+
+// Copy icon
 import { TbCopy } from "react-icons/tb";
+
+// Material ui components
 import {
     Box,
     Table,
@@ -8,12 +12,12 @@ import {
     TableContainer,
     TableHead,
     TableRow,
-    Typography,
     styled,
     useMediaQuery,
     useTheme
 } from '@mui/material';
 
+// Styled components for structure and responsiveness
 const SummaryTableContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',

@@ -1,14 +1,18 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+
+// Material ui components
 import {
     Box,
-    Typography,
+    LinearProgress,
     List,
     ListItem,
-    LinearProgress,
-    colors
+    Typography
 } from '@mui/material';
+
+// For styling
 import { styled } from '@mui/material/styles';
+
+// Styled components for structure and responsiveness
 
 const WinRateChartContainer = styled(Box)(({ theme }) => ({
     border: '1px solid #ccc',
@@ -125,6 +129,7 @@ const QualifyPercent = styled(Typography)(({ theme }) => ({
 
 export default function ChartComponent({ data, title, isChart }) {
 
+    // For getting width of progress bar
     let total = isChart ? data[0].count : data[0].acv;
 
     return (
