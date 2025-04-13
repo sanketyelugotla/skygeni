@@ -9,9 +9,7 @@ This project visualizes and analyzes win rate data using charts and statistics. 
 2. [Frontend Installation](#frontend-installation)
 3. [Backend Installation](#backend-installation)
 4. [Running the Project](#running-the-project)
-5. [Directory Structure](#directory-structure)
-6. [Technologies Used](#technologies-used)
-7. [License](#license)
+5. [Technologies Used](#technologies-used)
 
 ---
 
@@ -96,13 +94,6 @@ Once both the **frontend** and **backend** are running, follow these steps:
 2. **Backend:** Should be running on [http://localhost:5000](http://localhost:5000) or the configured port.
 
 The frontend will make API requests to the backend, fetch the data, and render it in charts and statistics.
-
----
-
-## Directory Structure
-
-### Frontend Structure
-
 
 ---
 
