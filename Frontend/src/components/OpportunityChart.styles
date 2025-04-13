@@ -1,0 +1,104 @@
+import { styled } from '@mui/material/styles';
+import { Box, Typography, List, ListItem, LinearProgress } from '@mui/material';
+
+export const WinRateChartContainer = styled(Box)(({ theme }) => ({
+  border: '1px solid #ccc',
+  borderRadius: '5px',
+  boxShadow: '0 5px 10px 2px #00000057',
+  paddingBottom: '2rem',
+}));
+
+export const ChartTitle = styled(Typography)(({ theme }) => ({
+  marginLeft: '2rem',
+  letterSpacing: '0.5px',
+  lineHeight: '4rem',
+}));
+
+export const DividerLine = styled(Box)(({ theme }) => ({
+  height: '1px',
+  width: '100%',
+  backgroundColor: '#0000004f',
+  marginBottom: '2rem',
+}));
+
+export const ChartContent = styled(Box)(({ theme }) => ({
+  minWidth: '420px',
+  padding: '0 4rem',
+  [theme.breakpoints.down('lg')]: {
+    padding: '0 2rem',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '0 1rem',
+  },
+}));
+
+export const StageLabel = styled(Typography)(({ theme }) => ({
+  textAlign: 'end',
+  width: '4rem',
+  marginRight: '1rem',
+  fontSize: '0.93em',
+  paddingTop: '0.3rem',
+  [theme.breakpoints.down('sm')]: {
+    width: '3.1rem',
+  },
+}));
+
+export const ProgressWrapper = styled(Box)(({ theme }) => ({
+  flex: 1,
+  display: 'flex',
+  flexDirection: 'column',
+}));
+
+export const ProgressBarWrapper = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  width: '100%',
+}));
+
+export const ProgressContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  flex: 1,
+  backgroundColor: '#bfbfbf',
+  borderRadius: '3px',
+  overflow: 'hidden',
+  height: '1.6rem',
+}));
+
+export const ProgressBar = styled(LinearProgress)(({ theme }) => ({
+  backgroundColor: '#70ad47',
+  color: 'white',
+  height: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontSize: '0.9em',
+  padding: '0 0.3rem',
+  fontWeight: 600,
+  '& .MuiLinearProgress-bar': {
+    backgroundColor: '#70ad47',
+  },
+}));
+
+export const BarLabel = styled(Typography)(({ theme }) => ({
+  whiteSpace: 'nowrap',
+  color: 'white',
+  fontSize: '0.9em',
+  fontWeight: 600,
+}));
+
+export const PercentText = styled(Typography)(({ theme }) => ({
+  fontWeight: 600,
+  minWidth: '2rem',
+  fontSize: '0.9em',
+  textAlign: 'left',
+  marginLeft: '0.5rem',
+}));
+
+export const QualifyPercent = styled(Typography)(({ theme }) => ({
+  fontWeight: 600,
+  fontSize: '0.8em',
+  textAlign: 'center',
+  marginTop: '0.2rem',
+  width: 'calc(100% - 40px)',
+}));
