@@ -107,6 +107,9 @@ const PercentText = styled(Typography)(({ theme }) => ({
     fontSize: '0.9em',
     textAlign: 'left',
     marginLeft: '0.5rem',
+    [theme.breakpoints.down('sm')]: {
+        minWidth: "1rem"
+    },
 }));
 
 const QualifyPercent = styled(Typography)(({ theme }) => ({
@@ -117,7 +120,7 @@ const QualifyPercent = styled(Typography)(({ theme }) => ({
     width: 'calc(100% - 40px)',
 }));
 
-export default function OpportunityChart({ data, title, isChart }) {
+export default function ChartComponent({ data, title, isChart }) {
 
     let total = isChart ? data[0].count : data[0].acv;
 

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchACVData } from '../redux/dataSlice';
 import { Typography } from '@mui/material';
 
-import ProgressChart from "./utils/ProgressChart"
+import ChartComponent from './utils/ChartComponent';
 
 export default function AcvChart() {
 	const dispatch = useDispatch();
@@ -19,6 +19,6 @@ export default function AcvChart() {
 
 
 	return (
-		<ProgressChart data={acvData} title={`Win Rate by ACV: ${acvData[0]?.wonPercent || 0}%`} isChart={false} />
+		<ChartComponent data={acvData} title={`Win Rate by ACV: ${acvData[0]?.wonPercent || 0}%`} isChart={false} />
 	);
 }

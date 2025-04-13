@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Typography } from '@mui/material';
 import { fetchOpportunityData } from '../redux/dataSlice';
 
-import ProgressChart from "./utils/ProgressChart"
+import ChartComponent from './utils/ChartComponent';
 
 export default function OpportunityChart() {
 	const dispatch = useDispatch();
@@ -18,6 +18,6 @@ export default function OpportunityChart() {
 	if (!opportunityData || opportunityData.length === 0) return <Typography>No opportunity data available.</Typography>;
 
 	return (
-		<ProgressChart data={opportunityData} title={`Win Rate by Opportunity Count: ${opportunityData[0]?.wonPercent || 0}%`} isChart={true} />
+		<ChartComponent data={opportunityData} title={`Win Rate by Opportunity Count: ${opportunityData[0]?.wonPercent || 0}%`} isChart={true} />
 	);
 }

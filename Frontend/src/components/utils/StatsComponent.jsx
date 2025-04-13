@@ -89,7 +89,7 @@ const CopyIcon = styled(TbCopy)(({ theme }) => ({
     cursor: 'pointer',
 }));
 
-export default function AcvStats({ data, isOpp }) {
+export default function StatsComponent({ data, isOpp }) {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
