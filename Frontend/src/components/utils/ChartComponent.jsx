@@ -73,6 +73,10 @@ const ProgressContainer = styled(Box)(({ theme }) => ({
     borderRadius: '3px',
     overflow: 'hidden',
     height: '1.6rem',
+
+    [theme.breakpoints.down('sm')]: {
+        height: "2rem",
+    },
 }));
 
 const ProgressFill = styled(Box)(({ theme, value }) => ({
