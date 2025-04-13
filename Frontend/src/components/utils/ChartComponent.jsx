@@ -31,13 +31,10 @@ const DividerLine = styled(Box)(({ theme }) => ({
 }));
 
 const ChartContent = styled(Box)(({ theme }) => ({
-    minWidth: '420px',
+    minWidth: '400px',
     padding: '0 4rem',
     [theme.breakpoints.down('lg')]: {
         padding: '0 2rem',
-    },
-    [theme.breakpoints.down('sm')]: {
-        padding: '0 1rem',
     },
 }));
 
@@ -50,10 +47,10 @@ const StageLabel = styled(Typography)(({ theme }) => ({
     fontSize: '0.93em',
     paddingTop: '0.3rem',
     [theme.breakpoints.down('sm')]: {
-        width: '3.1rem',
         position: "absolute",
         color: "white",
-        left: "0.5rem"
+        left: "0.5rem",
+        textAlign: "start"
     },
 }));
 
