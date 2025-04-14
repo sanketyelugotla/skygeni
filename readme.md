@@ -5,6 +5,7 @@ This project visualizes and analyzes win rate data using charts and statistics. 
 ---
 
 ## Table of Contents
+
 1. [Project Setup](#project-setup)
 2. [Frontend Installation](#frontend-installation)
 3. [Backend Installation](#backend-installation)
@@ -26,6 +27,7 @@ Before you begin, ensure you have the following installed for both the **fronten
 ## Frontend Installation
 
 1. **Clone the repository:**
+
     ```bash
     git clone https://github.com/sanketyelugotla/skygeni
     cd Frontend
@@ -33,11 +35,13 @@ Before you begin, ensure you have the following installed for both the **fronten
 
 2. **Install dependencies:**
     Install the required dependencies by running the following command in the frontend directory:
+
     ```bash
     npm install
     ```
 
 3. **Start the development server:**
+
     ```bash
     npm run dev
     ```
@@ -52,6 +56,7 @@ Before you begin, ensure you have the following installed for both the **fronten
 ## Backend Installation
 
 1. **Clone the repository (Backend folder):**
+
     ```bash
     git clone https://github.com/sanketyelugotla/skygeni
     cd Backend
@@ -59,6 +64,7 @@ Before you begin, ensure you have the following installed for both the **fronten
 
 2. **Install dependencies:**
     Install the required dependencies by running the following command in the backend directory:
+
     ```bash
     npm install
     ```
@@ -69,6 +75,7 @@ Before you begin, ensure you have the following installed for both the **fronten
 
 4. **Create a `.env` file:**
     In the backend directory, create a `.env` file and add the following variables:
+
     ```
     MONGO_URL=<your-mongodb-connection-string>
     PORT=5000
@@ -78,6 +85,7 @@ Before you begin, ensure you have the following installed for both the **fronten
     - The `PORT` variable specifies the port on which the backend server will run (default is 5000).
 
 5. **Run the backend server:**
+
     ```bash
     npm run dev
     ```
@@ -99,7 +107,8 @@ The frontend will make API requests to the backend, fetch the data, and render i
 
 ## Technologies Used
 
-### Frontend:
+### Frontend
+
 - **React**: A JavaScript library for building user interfaces.
 - **Redux**: A predictable state container for JavaScript apps.
 - **Material-UI (MUI)**: A React UI framework for building modern UIs.
@@ -107,7 +116,8 @@ The frontend will make API requests to the backend, fetch the data, and render i
 - **Axios**: For making HTTP requests to the backend (if applicable).
 - **React Router**: For page navigation (if needed).
 
-### Backend:
+### Backend
+
 - **Node.js**: JavaScript runtime for the backend.
 - **Express.js**: Web framework for Node.js to handle routing and middleware.
 - **MongoDB/Mongoose**: NoSQL database and ODM (if using MongoDB).
