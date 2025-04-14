@@ -35,7 +35,7 @@ const DividerLine = styled(Box)(({ theme }) => ({
 }));
 
 const ChartContent = styled(Box)(({ theme }) => ({
-    minWidth: '360px',
+    minWidth: '370px',
     padding: '0 4rem',
     [theme.breakpoints.down('lg')]: {
         padding: '0 2rem',
