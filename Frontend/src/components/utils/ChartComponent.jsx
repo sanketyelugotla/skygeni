@@ -24,6 +24,9 @@ const ChartTitle = styled(Typography)(({ theme }) => ({
     marginLeft: '2rem',
     letterSpacing: '0.5px',
     lineHeight: '4rem',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: "1.1rem",
+    },
 }));
 
 const DividerLine = styled(Box)(({ theme }) => ({
@@ -36,8 +39,8 @@ const DividerLine = styled(Box)(({ theme }) => ({
 const ChartContent = styled(Box)(({ theme }) => ({
     minWidth: '370px',
     padding: '0 4rem',
-    [theme.breakpoints.down('lg')]: {
-        padding: '0 2rem',
+    [theme.breakpoints.down('sm')]: {
+        padding: '0 1.2rem',
     },
 }));
 

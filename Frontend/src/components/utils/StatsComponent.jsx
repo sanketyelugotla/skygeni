@@ -21,7 +21,7 @@ import {
 const SummaryTableContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    padding: '0.8rem',
+    // padding: '0.8rem',
     borderRadius: '8px',
     marginTop: '1rem',
     [theme.breakpoints.down('sm')]: {
@@ -41,6 +41,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     padding: '0.5rem 1.4rem',
     [theme.breakpoints.down('sm')]: {
         padding: '0.2rem 0.5rem',
+        fontSize: "0.8rem"
     },
 }));
 
@@ -49,20 +50,25 @@ const LeftTableCell = styled(StyledTableCell)(({ theme }) => ({
     textAlign: 'left',
     [theme.breakpoints.down('sm')]: {
         width: 'auto',
+        fontSize: "0.8rem"
     },
 }));
 
 const StyledTableHeaderCell = styled(StyledTableCell)(({ theme }) => ({
     textAlign: 'center',
-    fontFamily: 'Roboto',
     fontSize: '1.04rem',
     height: 'auto',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: "0.9rem",
+    },
 }));
 
 const LeftStyledTableHeader = styled(LeftTableCell)(({ theme }) => ({
     fontSize: '1.04rem',
     height: 'auto',
-    fontFamily: 'Roboto',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: "0.9rem",
+    },
 }));
 
 const RedHeaderCell = styled(StyledTableHeaderCell)(({ theme }) => ({
@@ -81,7 +87,6 @@ const GreenTableCell = styled(StyledTableCell)(({ theme }) => ({
 }));
 
 const TotalTableRow = styled(TableRow)(({ theme }) => ({
-    fontFamily: 'Roboto',
     fontWeight: 600,
 }));
 
@@ -91,6 +96,9 @@ const CopyIcon = styled(TbCopy)(({ theme }) => ({
     marginBottom: '1rem',
     color: '#818080',
     cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+        fontSize: "1.3rem",
+    },
 }));
 
 export default function StatsComponent({ data, isOpp }) {
