@@ -19,7 +19,7 @@ Before you begin, ensure you have the following installed for both the **fronten
 
 - **Node.js**: [Download Node.js](https://nodejs.org/)
 - **npm** (comes with Node.js): For managing dependencies.
-- **MongoDB** (for backend database, if using MongoDB)
+- **MongoDB** (for database)
 
 ---
 
