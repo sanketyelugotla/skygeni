@@ -11,6 +11,7 @@ This project visualizes and analyzes win rate data using charts and statistics. 
 3. [Backend Installation](#backend-installation)
 4. [Running the Project](#running-the-project)
 5. [Technologies Used](#technologies-used)
+6. [Device Screenshots](#device-screenshots)
 
 ---
 
