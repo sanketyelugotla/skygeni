@@ -1,9 +1,13 @@
 const { Data } = require("../models")
+const { data } = require("../data/data")
 
 // Service to fetch data by opportunity count along with all the calculations required
 const getDataByOpportunityCount = async () => {
     // Fetching data
-    const rawData = await Data.find().lean();
+    // const rawData = await Data.find().lean();
+
+    // For performance purpose
+    const rawData = data;
 
     const wonCount = rawData[rawData.length - 1].count;
     const result = [];
@@ -41,7 +45,10 @@ const getDataByOpportunityCount = async () => {
 // Service to fetch data by acv along with all the calculations required
 const getDataByACV = async () => {
     // Fetching data
-    const rawData = await Data.find().lean();
+    // const rawData = await Data.find().lean();
+
+    // For performance purpose
+    const rawData = data;
 
     const wonACV = rawData[rawData.length - 1].acv;
     const result = [];
