@@ -79,7 +79,7 @@ Before you begin, ensure you have the following installed for both the **fronten
     - Ensure the connection string is configured properly in the backend.
 
 4. **Create a `.env` file:**
-    In the backend directory, create a `.env` file and add the following variables:
+    - In the backend directory, create a `.env` file and add the following variables:
 
     ```bash
     MONGO_URL=<your-mongodb-connection-string>
@@ -118,14 +118,13 @@ The frontend will make API requests to the backend, fetch the data, and render i
 - **Redux**: A predictable state container for JavaScript apps.
 - **Material-UI (MUI)**: A React UI framework for building modern UIs.
 - **Styled Components**: For custom component styling.
-- **Axios**: For making HTTP requests to the backend (if applicable).
-- **React Router**: For page navigation (if needed).
+- **Axios**: For making HTTP requests to the backend.
 
 ### Backend
 
 - **Node.js**: JavaScript runtime for the backend.
 - **Express.js**: Web framework for Node.js to handle routing and middleware.
-- **MongoDB/Mongoose**: NoSQL database and ODM (if using MongoDB).
+- **MongoDB/Mongoose**: NoSQL database and ODM.
 - **dotenv**: For managing environment variables.
 
 ---
