@@ -79,7 +79,8 @@ Before you begin, ensure you have the following installed for both the **fronten
     - Ensure the connection string is configured properly in the backend.
 
 4. **Create a `.env` file:**
-    - In the backend directory, create a `.env` file and add the following variables:
+    - In the backend directory, create a `.env` file
+    - Add the following variables:
 
     ```bash
     MONGO_URL=<your-mongodb-connection-string>
