@@ -125,9 +125,9 @@ The frontend will make API requests to the backend, fetch the data, and render i
 
 ---
 
-![WebM Video](./Videos/iPhone-13-PRO-MAX.webm)
-
-<video width="320" height="240" controls>
-  <source src="./Videos/iPhone-13-PRO-MAX.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+![Mobile Phone](./screenshots/iPhone-13-PRO-MAX.png)
+![Mobile Phone](./screenshots/iPhone-13-PRO-MAX-2.png)
+![Laptop](./screenshots/Macbook-Air1.png)
+![Laptop](./screenshots/Macbook-Air2.png)
+![Tablet](./screenshots/iPad-PRO-11V.png)
+![Tablet](./screenshots/iPad-PRO-11H.png)
