@@ -23,6 +23,39 @@
     padding: 0.5rem 1.8rem 1rem 1.8rem;
 }
 
+header {
+    border-radius: 6px;
+    width: 100%;
+    display: none;
+    pointer-events: none;
+    box-shadow: 0 5px 10px 2px #00000057;
+    
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+        font-size: 2rem;
+        
+        li {
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+            padding: 1.8rem 2.2rem;
+        }
+    }
+}
+
+.active {
+    background-color: #4472c4;
+    color: white;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+}
+
 @media (max-width: 600px) {
     .statsContainer {
         padding: 0.5rem 0.5rem 1rem 0.5rem;
@@ -30,5 +63,26 @@
 
     .container {
         padding: 0.1rem;
+    }
+}
+
+@media (min-width: 3700px) {
+    .statsContainer {
+        padding: 1rem 2rem 1rem 2rem;
+    }
+
+    .container {
+        gap: 2rem;
+        padding: 8rem;
+        padding-top: 4rem;
+    }
+
+    .row {
+        gap: 2rem;
+    }
+
+    header {
+        display: flex;
+        pointer-events: all;
     }
 }

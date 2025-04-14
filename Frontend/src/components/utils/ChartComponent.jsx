@@ -18,6 +18,10 @@ const WinRateChartContainer = styled(Box)(({ theme }) => ({
     borderRadius: '5px',
     boxShadow: '0 5px 10px 2px #00000057',
     paddingBottom: '2rem',
+
+    [theme.breakpoints.up('4k')]: {
+        paddingBottom: "3rem"
+    },
 }));
 
 const ChartTitle = styled(Typography)(({ theme }) => ({
@@ -26,6 +30,10 @@ const ChartTitle = styled(Typography)(({ theme }) => ({
     lineHeight: '4rem',
     [theme.breakpoints.down('sm')]: {
         fontSize: "1.1rem",
+    },
+    [theme.breakpoints.up('4k')]: {
+        fontSize: "2.2rem",
+        margin: "2rem 0 2rem 4rem",
     },
 }));
 
@@ -42,6 +50,9 @@ const ChartContent = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('sm')]: {
         padding: '0 1.2rem',
     },
+    [theme.breakpoints.up('4k')]: {
+        padding: '0 5rem 0 6rem',
+    },
 }));
 
 const StageLabel = styled(Typography)(({ theme }) => ({
@@ -57,6 +68,12 @@ const StageLabel = styled(Typography)(({ theme }) => ({
         color: "white",
         left: "0.5rem",
         textAlign: "start"
+    },
+    [theme.breakpoints.up('4k')]: {
+        fontSize: '1.6em',
+        width: '6.6rem',
+        paddingTop: '0.4rem',
+        marginRight: '2rem',
     },
 }));
 
@@ -82,6 +99,9 @@ const ProgressContainer = styled(Box)(({ theme }) => ({
 
     [theme.breakpoints.down('sm')]: {
         height: "2rem",
+    },
+    [theme.breakpoints.up('4k')]: {
+        height: "3.5rem",
     },
 }));
 
@@ -111,6 +131,9 @@ const BarLabel = styled(Typography)(({ theme }) => ({
     fontSize: '0.9em',
     fontWeight: 600,
     position: 'absolute',
+    [theme.breakpoints.up('4k')]: {
+        fontSize: '1.5rem',
+    },
 }));
 
 const PercentText = styled(Typography)(({ theme }) => ({
@@ -119,6 +142,11 @@ const PercentText = styled(Typography)(({ theme }) => ({
     fontSize: '0.9em',
     textAlign: 'left',
     marginLeft: '0.5rem',
+    [theme.breakpoints.up('4k')]: {
+        minWidth: '4rem',
+        fontSize: '1.5rem',
+        marginLeft: '1rem',
+    },
 }));
 
 const QualifyPercent = styled(Typography)(({ theme }) => ({
@@ -127,6 +155,10 @@ const QualifyPercent = styled(Typography)(({ theme }) => ({
     textAlign: 'center',
     marginTop: '0.2rem',
     width: 'calc(100% - 40px)',
+    [theme.breakpoints.up('4k')]: {
+        fontSize: '1.5rem',
+        width: 'calc(100% - 5rem)',
+    },
 }));
 
 export default function ChartComponent({ data, title, isChart }) {

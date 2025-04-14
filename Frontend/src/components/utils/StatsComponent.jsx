@@ -28,6 +28,9 @@ const SummaryTableContainer = styled(Box)(({ theme }) => ({
         padding: 0,
         margin: '1rem 0',
     },
+    [theme.breakpoints.up('4k')]: {
+        margin: "1rem",
+    },
 }));
 
 const StyledTable = styled(Table)(({ theme }) => ({
@@ -42,6 +45,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [theme.breakpoints.down('sm')]: {
         padding: '0.2rem 0.5rem',
         fontSize: "0.8rem"
+    },
+    [theme.breakpoints.up('4k')]: {
+        padding: '0.7em 1.4rem',
+        fontSize: "2rem"
     },
 }));
 
@@ -61,6 +68,10 @@ const StyledTableHeaderCell = styled(StyledTableCell)(({ theme }) => ({
     [theme.breakpoints.down('sm')]: {
         fontSize: "0.9rem",
     },
+    [theme.breakpoints.up('4k')]: {
+        fontSize: '2.2rem',
+        lineHeight: '2.4rem',
+    },
 }));
 
 const LeftStyledTableHeader = styled(LeftTableCell)(({ theme }) => ({
@@ -68,6 +79,10 @@ const LeftStyledTableHeader = styled(LeftTableCell)(({ theme }) => ({
     height: 'auto',
     [theme.breakpoints.down('sm')]: {
         fontSize: "0.9rem",
+    },
+    [theme.breakpoints.up('4k')]: {
+        fontSize: '2.2rem',
+        lineHeight: '2.4rem',
     },
 }));
 
@@ -98,6 +113,9 @@ const CopyIcon = styled(TbCopy)(({ theme }) => ({
     cursor: 'pointer',
     [theme.breakpoints.down('sm')]: {
         fontSize: "1.3rem",
+    },
+    [theme.breakpoints.up('4k')]: {
+        fontSize: '4rem',
     },
 }));
 
