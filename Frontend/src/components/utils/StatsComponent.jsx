@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Copy icon
 import { TbCopy } from "react-icons/tb";
@@ -14,16 +14,27 @@ import {
     TableRow,
     styled,
     useMediaQuery,
-    useTheme
+    useTheme,
+    keyframes
 } from '@mui/material';
 
 // Styled components for structure and responsiveness
 const SummaryTableContainer = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
-    // padding: '0.8rem',
     borderRadius: '8px',
     marginTop: '1rem',
+    opacity: 0,
+    animation: `${keyframes`
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    `} 0.5s ease-out forwards`,
     [theme.breakpoints.down('sm')]: {
         padding: 0,
         margin: '1rem 0',
@@ -111,6 +122,11 @@ const CopyIcon = styled(TbCopy)(({ theme }) => ({
     marginBottom: '1rem',
     color: '#818080',
     cursor: 'pointer',
+    transition: 'transform 0.2s, color 0.2s',
+    '&:hover': {
+        transform: 'scale(1.1)',
+        color: theme.palette.primary.main,
+    },
     [theme.breakpoints.down('sm')]: {
         fontSize: "1.3rem",
     },
@@ -119,12 +135,36 @@ const CopyIcon = styled(TbCopy)(({ theme }) => ({
     },
 }));
 
+const AnimatedTableRow = styled(TableRow)(({ theme, delay }) => ({
+    '&:nth-of-type(even)': {
+        backgroundColor: '#f5f5f5',
+    },
+    opacity: 0,
+    transform: 'translateX(-20px)',
+    animation: `${keyframes`
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    `} 0.3s ease-out forwards`,
+    animationDelay: `${delay * 0.1}s`,
+}));
+
 export default function StatsComponent({ data, isOpp }) {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
 
     return data.length > 0 && (
-        <SummaryTableContainer>
+        <SummaryTableContainer style={{ opacity: isLoaded ? 1 : 0 }}>
             <CopyIcon />
             <TableContainer>
                 <StyledTable>
@@ -142,14 +182,10 @@ export default function StatsComponent({ data, isOpp }) {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {data.map((item) => (
-                            <TableRow
+                        {data.map((item, index) => (
+                            <AnimatedTableRow
                                 key={item.label}
-                                sx={{
-                                    '&:nth-of-type(even)': {
-                                        backgroundColor: '#f5f5f5',
-                                    },
-                                }}
+                                delay={index}
                             >
                                 <LeftTableCell>{item.label}</LeftTableCell>
                                 <StyledTableCell>
@@ -164,7 +200,7 @@ export default function StatsComponent({ data, isOpp }) {
                                 <StyledTableCell>
                                     {`${item.wonPercent}%` || '-'}
                                 </StyledTableCell>
-                            </TableRow>
+                            </AnimatedTableRow>
                         ))}
                         <TotalTableRow>
                             <LeftTableCell>Total</LeftTableCell>
