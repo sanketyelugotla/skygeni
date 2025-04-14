@@ -81,7 +81,7 @@ Before you begin, ensure you have the following installed for both the **fronten
 4. **Create a `.env` file:**
     In the backend directory, create a `.env` file and add the following variables:
 
-    ```
+    ```bash
     MONGO_URL=<your-mongodb-connection-string>
     PORT=5000
     ```
@@ -134,18 +134,15 @@ The frontend will make API requests to the backend, fetch the data, and render i
 
 ### Mobile Phones
 
-| ![Mobile Phone 1](./screenshots/iPhone-13-PRO-MAX.png) | ![Mobile Phone 2](./screenshots/iPhone-13-PRO-MAX-2.png) |
-| ------------------------------------------------------ | -------------------------------------------------------- |
+ ![Mobile Phone 1](./screenshots/iPhone-13-PRO-MAX.png)  ![Mobile Phone 2](./screenshots/iPhone-13-PRO-MAX-2.png)
 
 ### Laptops
 
-| ![Laptop 1](./screenshots/Macbook-Air1.png)            | ![Laptop 2](./screenshots/Macbook-Air2.png)              |
-| ----------------------------------------------------- | -------------------------------------------------------- |
+ ![Laptop 1](./screenshots/Macbook-Air1.png)            | ![Laptop 2](./screenshots/Macbook-Air2.png)
 
 ### Tablets
 
-| ![Tablet 1](./screenshots/iPad-PRO-11V.png)            | ![Tablet 2](./screenshots/iPad-PRO-11H.png)              |
-| ----------------------------------------------------- | -------------------------------------------------------- |
+![Tablet 1](./screenshots/iPad-PRO-11V.png)            | ![Tablet 2](./screenshots/iPad-PRO-11H.png)
 
 ### 4K Devices
 
