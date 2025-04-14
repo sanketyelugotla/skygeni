@@ -2,6 +2,10 @@
 
 This project visualizes and analyzes win rate data using charts and statistics. It fetches data from a backend API and displays it in a structured format, including bar charts and percentage statistics.
 
+## 🔗 Live Demo
+
+[Click here to view the live project](https://skygeni-ten.vercel.app/)
+
 ---
 
 ## Table of Contents
@@ -142,3 +146,7 @@ The frontend will make API requests to the backend, fetch the data, and render i
 
 | ![Tablet 1](./screenshots/iPad-PRO-11V.png)            | ![Tablet 2](./screenshots/iPad-PRO-11H.png)              |
 | ----------------------------------------------------- | -------------------------------------------------------- |
+
+### 4K Devices
+
+![Laptop 1](./screenshots/4k.png)
