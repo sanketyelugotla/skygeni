@@ -80,6 +80,13 @@ const ChartContent = styled(Box)(({ theme }) => ({
     [theme.breakpoints.down('sm')]: {
         padding: '0 1.2rem',
     },
+    [theme.breakpoints.down('md')]: {
+        padding: '0 1.4rem',
+    },
+    [theme.breakpoints.down('lg')]: {
+        minWidth: '380px',
+        padding: '0 2rem',
+    },
     [theme.breakpoints.up('4k')]: {
         padding: '0 5rem 0 6rem',
     },
