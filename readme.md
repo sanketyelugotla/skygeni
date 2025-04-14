@@ -114,3 +114,5 @@ The frontend will make API requests to the backend, fetch the data, and render i
 - **dotenv**: For managing environment variables.
 
 ---
+
+![WebM Video](./Videos/iPhone-13-PRO-MAX.webm)
