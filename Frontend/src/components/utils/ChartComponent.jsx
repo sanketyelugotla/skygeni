@@ -13,7 +13,6 @@ import {
 import { styled } from '@mui/material/styles';
 
 // Styled components for structure and responsiveness
-
 const WinRateChartContainer = styled(Box)(({ theme }) => ({
     border: '1px solid #ccc',
     borderRadius: '5px',
